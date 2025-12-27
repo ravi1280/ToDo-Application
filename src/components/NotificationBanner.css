@@ -1,0 +1,87 @@
+/* Enhanced Notification Banner */
+.notification-banner {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    max-width: 420px;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-left: 4px solid var(--accent-danger);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--shadow-2xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    z-index: 1001;
+    animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(120%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.notification-content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    flex: 1;
+}
+
+/* Enhanced Notification Icon */
+.notification-icon {
+    color: var(--accent-danger);
+    flex-shrink: 0;
+    margin-top: 2px;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.3));
+}
+
+.notification-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.875rem;
+}
+
+.notification-text strong {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.notification-text span {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+}
+
+/* Enhanced Close Button */
+.notification-close {
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+}
+
+.notification-close:hover {
+    transform: scale(1.1);
+    color: var(--accent-danger);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .notification-banner {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+        max-width: none;
+    }
+}
