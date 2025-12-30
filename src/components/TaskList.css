@@ -1,6 +1,7 @@
-/* Enhanced Task List Container */
 .task-list-container {
-    animation: slideUp var(--transition-base) 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
 .task-list {
@@ -8,14 +9,13 @@
     flex-direction: column;
     gap: var(--spacing-md);
     min-height: 200px;
-    transition: all var(--transition-base);
 }
 
 .task-list.dragging-over {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
-    border-radius: var(--radius-xl);
-    border: 2px dashed rgba(99, 102, 241, 0.3);
-    padding: var(--spacing-sm);
+    background-color: rgba(99, 102, 241, 0.05);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--accent-primary);
+    padding: var(--spacing-md);
 }
 
 .task-item-wrapper {
@@ -23,82 +23,38 @@
 }
 
 .task-item-wrapper.dragging {
-    transform: rotate(3deg) scale(1.02);
-    opacity: 0.85;
-    z-index: 100;
+    opacity: 0.5;
 }
 
-.task-item-wrapper.dragging .task-item {
-    box-shadow: var(--shadow-2xl);
-    cursor: grabbing;
-}
-
-/* Enhanced Empty State */
+/* Empty State */
 .task-list-empty {
-    background: var(--bg-card);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     padding: var(--spacing-2xl);
-    animation: slideUp var(--transition-base) 0.3s;
-    transition: all var(--transition-base);
-}
-
-.task-list-empty:hover {
-    border-color: var(--border-color-hover);
-    box-shadow: var(--shadow-lg);
-}
-
-.empty-state {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: var(--spacing-md);
-    padding: var(--spacing-2xl);
 }
 
-/* Enhanced Empty Icon */
 .empty-icon {
+    font-size: 3rem;
     color: var(--text-muted);
-    opacity: 0.6;
-    animation: pulse 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.2));
+    margin-bottom: var(--spacing-sm);
 }
 
 .empty-title {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
     color: var(--text-primary);
-    margin: 0;
-    letter-spacing: var(--letter-spacing-tight);
 }
 
 .empty-description {
-    font-size: 0.875rem;
+    font-size: var(--font-size-base);
     color: var(--text-secondary);
     max-width: 400px;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .task-list {
-        gap: var(--spacing-sm);
-    }
-
-    .task-list-empty {
-        padding: var(--spacing-xl);
-    }
-
-    .empty-state {
-        padding: var(--spacing-lg);
-    }
-
-    .empty-title {
-        font-size: 1.25rem;
-    }
+    line-height: 1.5;
 }

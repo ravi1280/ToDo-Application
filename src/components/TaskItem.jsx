@@ -42,14 +42,15 @@ const TaskItem = ({ task, provided }) => {
             {...provided.dragHandleProps}
             className={`task-item ${task.completed ? 'completed' : ''} ${isOverdue ? 'overdue' : ''}`}
         >
-            {/* Checkbox */}
-            <div className="task-checkbox-wrapper">
-                <input
-                    type="checkbox"
-                    checked={task.completed}
-                    onChange={handleToggle}
-                    className="checkbox task-checkbox"
-                />
+            {/* Toggle Button */}
+            <div className="task-toggle-wrapper">
+                <button
+                    onClick={handleToggle}
+                    className={`task-toggle ${task.completed ? 'completed' : ''}`}
+                    aria-label={task.completed ? 'Mark as incomplete' : 'Mark as complete'}
+                >
+                    <span className="toggle-slider"></span>
+                </button>
             </div>
 
             {/* Main Content */}

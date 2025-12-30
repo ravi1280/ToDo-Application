@@ -1,0 +1,235 @@
+/* Enhanced Mobile Responsive Styles */
+
+/* Tablet Breakpoint (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Breakpoint (641px - 768px) */
+@media (max-width: 768px) {
+
+    /* App Container */
+    .app-container {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .main-content {
+        gap: var(--spacing-md);
+    }
+
+    /* Touch Targets - Minimum 44x44px for accessibility */
+    .btn {
+        min-height: 44px;
+        padding: 0.625rem 1rem;
+    }
+
+    .btn-icon {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Cards */
+    .card {
+        padding: var(--spacing-md);
+    }
+
+    /* Task Stats */
+    .task-stats {
+        gap: var(--spacing-md);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    /* Task Items */
+    .task-item {
+        padding: var(--spacing-md);
+    }
+
+    .task-actions {
+        opacity: 1;
+        /* Always show on mobile */
+    }
+
+    /* Modal */
+    .modal {
+        max-width: calc(100% - 2rem);
+        margin: var(--spacing-md);
+    }
+}
+
+/* Small Mobile Breakpoint (< 640px) */
+@media (max-width: 640px) {
+
+    /* App Container */
+    .app-container {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-md);
+    }
+
+    /* Typography Adjustments */
+    :root {
+        --font-size-xl: 1.125rem;
+        --font-size-2xl: 1.25rem;
+        --font-size-3xl: 1.5rem;
+    }
+
+    /* Stats - Single Column */
+    .task-stats {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Progress */
+    .completion-progress {
+        padding: var(--spacing-md);
+    }
+
+    .progress-label {
+        font-size: 0.75rem;
+    }
+
+    .progress-percentage {
+        font-size: 1rem;
+    }
+
+    /* Filters */
+    .task-filters {
+        padding: var(--spacing-md);
+    }
+
+    .filter-btn,
+    .filter-chip {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .filter-label {
+        font-size: 0.7rem;
+    }
+
+    /* Task List */
+    .task-list {
+        gap: var(--spacing-sm);
+    }
+
+    .task-item {
+        padding: var(--spacing-md);
+    }
+
+    .task-title {
+        font-size: var(--font-size-base);
+    }
+
+    .task-description {
+        font-size: 0.8125rem;
+    }
+
+    .task-meta {
+        gap: var(--spacing-xs);
+    }
+
+    .task-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Modal - Full Screen on Small Mobile */
+    .modal {
+        max-width: 100%;
+        margin: var(--spacing-sm);
+        max-height: calc(100vh - 1rem);
+        border-radius: var(--radius-lg);
+    }
+
+    .modal-overlay {
+        padding: var(--spacing-sm);
+    }
+
+    /* Form */
+    .task-form {
+        padding: var(--spacing-md);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    /* Buttons - Slightly Smaller */
+    .btn {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.875rem;
+    }
+
+    /* Empty State */
+    .task-list-empty {
+        padding: var(--spacing-xl);
+    }
+
+    .empty-state {
+        padding: var(--spacing-lg);
+    }
+
+    .empty-title {
+        font-size: 1.125rem;
+    }
+
+    .empty-description {
+        font-size: 0.875rem;
+    }
+}
+
+/* Extra Small Mobile (< 375px) */
+@media (max-width: 374px) {
+    .app-container {
+        padding: 0.5rem;
+    }
+
+    .stat-card {
+        padding: 0.75rem;
+    }
+
+    .task-item {
+        padding: 0.75rem;
+    }
+
+    .modal {
+        margin: 0.5rem;
+    }
+}
