@@ -10,7 +10,7 @@ const Header = ({ theme, toggleTheme }) => {
             <div className="header-content">
                 <div className="header-left">
                     <div className="logo">
-                        <div className="logo-icon">✓</div>
+                        <img src="/taskflow-logo.png" alt="TaskFlow Logo" className="logo-image" />
                         <h1 className="logo-text">TaskFlow</h1>
                     </div>
                 </div>
