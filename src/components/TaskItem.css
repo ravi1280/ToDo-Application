@@ -239,8 +239,8 @@
     height: 20px;
     cursor: pointer;
     border: 2px solid var(--border-color);
-    border-radius: var(--radius-md);
-    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    background-color: transparent;
     position: relative;
     transition: all var(--transition-fast);
     flex-shrink: 0;
@@ -248,7 +248,7 @@
 
 .subtask-row input[type="checkbox"]:hover {
     border-color: var(--accent-primary);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
 }
 
 .subtask-row input[type="checkbox"]:checked {
@@ -257,14 +257,14 @@
 }
 
 .subtask-row input[type="checkbox"]:checked::after {
-    content: '';
+    content: '✓';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--text-inverse);
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 800;
 }
 
 /* Priority Indicator */
