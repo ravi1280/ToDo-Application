@@ -44,17 +44,15 @@ const TaskFilters = () => {
             {/* View Selector */}
             <div className="filter-section">
                 <div className="filter-label">
-                    <Calendar size={16} />
                     <span>View</span>
                 </div>
-                <div className="filter-buttons">
+                <div className="filter-chips">
                     {views.map(view => (
                         <button
                             key={view.value}
                             onClick={() => updateFilter('view', view.value)}
-                            className={`filter-btn ${filters.view === view.value ? 'active' : ''}`}
+                            className={`filter-chip ${filters.view === view.value ? 'active' : ''}`}
                         >
-                            {view.icon}
                             <span>{view.label}</span>
                         </button>
                     ))}
@@ -64,7 +62,6 @@ const TaskFilters = () => {
             {/* Category Filter */}
             <div className="filter-section">
                 <div className="filter-label">
-                    <Tag size={16} />
                     <span>Category</span>
                 </div>
                 <div className="filter-chips">
@@ -89,15 +86,14 @@ const TaskFilters = () => {
             {/* Priority Filter */}
             <div className="filter-section">
                 <div className="filter-label">
-                    <Flag size={16} />
                     <span>Priority</span>
                 </div>
-                <div className="filter-buttons">
+                <div className="filter-chips">
                     {priorities.map(priority => (
                         <button
                             key={priority.value}
                             onClick={() => updateFilter('priority', priority.value)}
-                            className={`filter-btn priority-${priority.color} ${filters.priority === priority.value ? 'active' : ''
+                            className={`filter-chip priority-${priority.color} ${filters.priority === priority.value ? 'active' : ''
                                 }`}
                         >
                             {priority.label}
@@ -109,15 +105,14 @@ const TaskFilters = () => {
             {/* Status Filter */}
             <div className="filter-section">
                 <div className="filter-label">
-                    <Filter size={16} />
                     <span>Status</span>
                 </div>
-                <div className="filter-buttons">
+                <div className="filter-chips">
                     {statuses.map(status => (
                         <button
                             key={status.value}
                             onClick={() => updateFilter('status', status.value)}
-                            className={`filter-btn ${filters.status === status.value ? 'active' : ''}`}
+                            className={`filter-chip ${filters.status === status.value ? 'active' : ''}`}
                         >
                             {status.label}
                         </button>
