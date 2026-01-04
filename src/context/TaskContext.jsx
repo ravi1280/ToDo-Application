@@ -66,7 +66,7 @@ export const TaskProvider = ({ children }) => {
             createdAt: new Date().toISOString(),
             order: tasks.length
         };
-        setTasks(prev => [...prev, newTask]);
+        setTasks(prev => [newTask, ...prev]);
         return newTask;
     }, [tasks.length]);
 
@@ -193,7 +193,7 @@ export const TaskProvider = ({ children }) => {
         updateTask,
         deleteTask,
         toggleTaskComplete,
-    toggleSubtaskComplete,
+        toggleSubtaskComplete,
         reorderTasks,
         addCategory,
         openNewTaskForm,
